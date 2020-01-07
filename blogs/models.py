@@ -8,3 +8,14 @@ class Blog(models.Model):
     pub_date = models.DateTimeField()
     body = models.TextField()
     image = models.ImageField(upload_to="images/")
+
+    # admin panel model name change
+    def __str__(self):
+        return self.title
+    # return a short body
+
+    def summery(self):
+        return self.body[:100]
+
+    def pub_date_pretty(self):
+        return self.pub_date.strftime('%b %e %Y')
