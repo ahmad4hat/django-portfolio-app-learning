@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.allBlogs),
-    path('<int:blog_id>/',views.detail,name='detail')
+    path('', views.allBlogs, name="allBlogs"),
+    path('<int:blog_id>/', views.detail, name='detail')
 
 ]

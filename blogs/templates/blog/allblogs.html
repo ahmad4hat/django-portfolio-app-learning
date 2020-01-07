@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+  {%load static%}
   <meta charset="utf-8" />
   <meta
     name="viewport"
@@ -9,7 +10,7 @@
   <meta name="description" content="" />
   <meta name="author" content="Ahmad's blog" />
   <meta name="generator" content="Jekyll v3.8.6" />
-  <title>Album example · Bootstrap</title>
+  <title>Ahmad's blog</title>
 
   <link
     rel="canonical"
@@ -27,23 +28,29 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link active" href="#">Blog</a>
+      <div class="container">
+        <a class="navbar-brand" href="/">Ahmad's Stuff</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="https://twitter.com/ahmad4hat"
+              >Twitter</a
+            >
+            <a class="nav-item nav-link" href="{% static 'Resume.pdf' %}"
+              >Resume</a
+            >
+            <a class="nav-item nav-link" href="{% url 'allBlogs' %}">Blog</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -58,7 +65,7 @@
       <hr />
 
       {%for blog in blogs.all%}
-      <a href=""><h3>{{blog.title}}</h3> </a>
+      <a href="{%url 'detail' blog.id%}"><h3>{{blog.title}}</h3> </a>
       {{blog.pub_date_pretty}}
       <br />
       <img
