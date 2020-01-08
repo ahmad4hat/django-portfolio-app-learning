@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1",
                  "localhost",
-                 "ahmadsdjangoapp.herokuapp.com"]
+                 "ahmadsdjangoapp.herokuapp.com",
+                 "ahmad4hatsdjangohat.herokuapp.com"]
 
 
 # Application definition
